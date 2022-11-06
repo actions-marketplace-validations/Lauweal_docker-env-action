@@ -1,6 +1,6 @@
-name: 'Your name here'
+name: 'docker-env-action'
 description: 'Provide a description here'
-author: 'Your name or organization here'
+author: 'lemonpaimc@126.com'
 inputs:
   path: # change this
     required: true
