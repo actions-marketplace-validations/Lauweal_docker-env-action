@@ -45,12 +45,11 @@ function run() {
             const filepath = (0, path_1.join)(process.cwd(), core.getInput('path'));
             core.info(`环境文件地址：${filepath}`);
             const config = (_a = env.config({ path: filepath })) === null || _a === void 0 ? void 0 : _a.parsed;
-            const code = Object.entries(process.env)
+            const code = Object.entries(config)
                 .reduce((a, b) => a.concat([`${b[0]}=${b[1]}`]), [])
                 .join('\n');
             core.info('环境');
-            core.info(code);
-            core.setOutput('env', config);
+            core.setOutput('env', code);
         }
         catch (error) {
             if (error instanceof Error)
