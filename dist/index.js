@@ -43,15 +43,14 @@ function run() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             const filepath = (0, path_1.join)(process.cwd(), core.getInput('path'));
-            const filter = core.getInput('filter').split(',');
             core.info(`环境文件地址：${filepath}`);
             const config = (_a = env.config({ path: filepath })) === null || _a === void 0 ? void 0 : _a.parsed;
             const code = Object.entries(process.env)
-                .filter(item => filter.includes(item[0]))
                 .reduce((a, b) => a.concat([`${b[0]}=${b[1]}`]), [])
                 .join('\n');
-            core.info(JSON.stringify(config));
-            core.setOutput('env', code);
+            core.info('环境');
+            core.info(code);
+            core.setOutput('env', config);
         }
         catch (error) {
             if (error instanceof Error)
