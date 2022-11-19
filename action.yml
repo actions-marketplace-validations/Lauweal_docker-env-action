@@ -6,10 +6,6 @@ inputs:
     required: true
     description: 'input description here'
     default: ''
-  filter:
-    required: true
-    description: 'input description here'
-    default: ''
 runs:
   using: 'node16'
   main: 'dist/index.js'
