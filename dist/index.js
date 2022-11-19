@@ -45,7 +45,10 @@ function run() {
             const filter = core.getInput('filter').split(',');
             core.info(`环境文件地址：${filepath}`);
             env.config({ path: filepath });
-            const code = Object.entries(process.env).filter((item) => filter.includes(item[0])).reduce((a, b) => a.concat([`${b[0]}=${b[1]}`]), []).join(' ');
+            const code = Object.entries(process.env)
+                .filter(item => filter.includes(item[0]))
+                .reduce((a, b) => a.concat([`${b[0]}=${b[1]}`]), [])
+                .join('\n');
             core.info(`变量：${code}`);
             core.setOutput('env', code);
         }
