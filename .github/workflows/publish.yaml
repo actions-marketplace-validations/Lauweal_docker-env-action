@@ -59,4 +59,4 @@ jobs:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_TOKEN }}
         with:
           channel-id: C03DY3QTBTQ
-          slack-message: '【发布】image-run-action: ${{ github.ref_name }} https://github.com/Lauweal/image-run-action/releases'
+          slack-message: '【发布】docker-env-action: ${{ github.ref_name }} https://github.com/Lauweal/docker-env-action/releases'
