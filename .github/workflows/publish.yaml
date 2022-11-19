@@ -52,3 +52,11 @@ jobs:
             - Second Change
           draft: true
           prerelease: false
+
+      - name: 💬 Comment in Slack
+        uses: slackapi/slack-github-action@v1.17.0
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_TOKEN }}
+        with:
+          channel-id: C03DY3QTBTQ
+          slack-message: '【发布】image-run-action: ${{ github.ref_name }} https://github.com/Lauweal/image-run-action/releases'
